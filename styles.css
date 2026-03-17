@@ -665,3 +665,208 @@ nav a:hover, nav a.active {
   font-size: 1.05rem;
 }
 
+/* =========================================
+   LONGEVITY LIBRARY SPECIFIC STYLES
+   ========================================= */
+
+/* Filter Bar Specific to the Library Navigation */
+.topic-navigation {
+  background-color: var(--bg-dark);
+  position: relative;
+  z-index: 10;
+  margin-top: -30px; /* Slight overlap with the hero */
+}
+.topic-navigation .filter-bar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  top: auto;
+}
+.topic-navigation .filter-container {
+  justify-content: center;
+  gap: 16px;
+}
+.topic-navigation .filter-btn {
+  background-color: var(--bg-section);
+  color: var(--text-sub);
+  border: 1px solid var(--border-color);
+  font-size: 0.875rem;
+}
+.topic-navigation .filter-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--text-main);
+  background-color: rgba(212, 175, 55, 0.05); /* very subtle gold hover */
+}
+.topic-navigation .filter-btn.active {
+  background-color: var(--accent-red);
+  color: #ffffff;
+  border-color: var(--accent-red);
+}
+
+/* Category Sections (Goals & Regions) reusing Program Grid */
+.body-region-browse .program-card,
+.training-goal-browse .program-card {
+  align-items: flex-start; /* Left align content instead of center */
+  text-align: left;
+}
+
+.body-region-browse .program-title,
+.training-goal-browse .program-title {
+  color: var(--text-main);
+  font-size: 1.5rem;
+}
+
+.body-region-browse .btn-outline,
+.training-goal-browse .btn-outline {
+  width: auto; /* Revert full width buttons from the homepage for the library */
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  border-color: var(--border-color);
+  color: var(--text-sub);
+}
+
+.body-region-browse .btn-outline:hover,
+.training-goal-browse .btn-outline:hover {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+/* Featured Guides (Blog Preview styling adjustments) */
+.blog-preview .blog-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+.blog-preview .blog-tag {
+  color: var(--accent-red); 
+}
+.blog-preview .blog-title {
+  color: var(--text-main);
+}
+
+/* =========================================
+   RESILIENCE PROTOCOL GENERATOR (FREE RESOURCES)
+   ========================================= */
+
+/* How It Works Grid refinements */
+.program-grid .program-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base Protocol Form Styling */
+.featured-programs form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.featured-programs form select:focus {
+  outline: none;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.2);
+}
+
+.featured-programs form select option {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 10px;
+}
+
+/* Form Area specific container tweaks */
+.featured-programs-container .program-card {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Protocol Preview Results Card */
+.highlight-featured .highlight-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.highlight-featured .btn-primary {
+  display: inline-block;
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
+}
+
+/* Dual CTA alignment */
+.lead-magnet-container .btn-secondary {
+  border-width: 2px;
+}
+
+/* =========================================
+   GENERATE MY PROTOCOL ADVANCED STYLING
+   ========================================= */
+
+/* Form Fields Hover State */
+.featured-programs form select:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Generate My Protocol Button Styling */
+#generate-btn {
+  margin-top: 15px;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+}
+
+#generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.5);
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+#generate-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(204, 0, 0, 0.3);
+}
+
+/* Generated Result Card Animations and Spacing */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#protocol-results-container .highlight-container > div {
+  animation: slideUpFadeIn 0.6s ease-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, opacity;
+}
+
+#protocol-results-container .highlight-container > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Internal Result Card items hover mapping */
+#protocol-results-container .highlight-container > div > div:nth-child(2) > div {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+#protocol-results-container .highlight-container > div > div:nth-child(2) > div:hover {
+  background-color: rgba(204, 0, 0, 0.1) !important;
+  transform: translateX(5px);
+}
